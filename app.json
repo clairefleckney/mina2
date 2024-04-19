@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "mina2",
-    "slug": "mina2",
+    "name": "lastProject",
+    "slug": "lastProject",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/OIPs.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

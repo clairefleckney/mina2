@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+// import { NavigationContainer } from 'react-native';
+// import { createStackNavigator } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { AppRegistry, Platform } from 'react-native';
+import Categories from './Categories';
+import listing from './listing';
+import part from './part';
+import shopping from './shopping';
+import { ImageBackground, StyleSheet } from 'react-native';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+export default App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ImageBackground style={styles.background}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Categories">
+          <Stack.Screen name="Categories" component={Categories} />
+          <Stack.Screen name="Listings" component={listing} />
+          <Stack.Screen name="Part" component={part} />
+          <Stack.Screen name="ShoppingCart" component={shopping} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ImageBackground>
   );
-}
+};
+
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    resizeMode: 'cover', // or 'stretch'
   },
 });
+
+// export default App;
